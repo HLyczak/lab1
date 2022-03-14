@@ -99,77 +99,96 @@ namespace UlamekTest
             Assert.AreEqual(8, c.mianownik);
         }
 
-        //sssssssssssssss
-
+        //1
         [Test]
         public void OdejmijDodatnieTenSamMianownik()
         {
             Ulamek a = new Ulamek(1, 20);
             Ulamek b = new Ulamek(1, 20);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
-            Assert.AreEqual(40, c.licznik);
+            Assert.AreEqual(0, c.licznik);
             Assert.AreEqual(400, c.mianownik);
         }
 
+        //2
         [Test]
         public void OdejmijDodatnieTenRoznyMianownik()
         {
-            Ulamek a = new Ulamek(1, 2);
+            Ulamek a = new Ulamek(1, 4);
             Ulamek b = new Ulamek(4, 4);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
-            Assert.AreEqual(12, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(-12, c.licznik);
+            Assert.AreEqual(16, c.mianownik);
         }
+
+        //3
 
         [Test]
         public void OdejmijZeroLicznikAzerowy()
         {
-            Ulamek a = new Ulamek(0, 2);
-            Ulamek b = new Ulamek(4, 4);
+            Ulamek a = new Ulamek(1, 2);
+            Ulamek b = new Ulamek(0, 4);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
-            Assert.AreEqual(4, c.licznik);
-            Assert.AreEqual(4, c.mianownik);
+            Assert.AreEqual(1, c.licznik);
+            Assert.AreEqual(2, c.mianownik);
         }
 
+        //4
         [Test]
         public void OdejmijZeroLicznikBzerowy()
         {
             Ulamek a = new Ulamek(1, 2);
             Ulamek b = new Ulamek(0, 4);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
             Assert.AreEqual(1, c.licznik);
             Assert.AreEqual(2, c.mianownik);
         }
 
+        //5
+
         [Test]
-        public void OdejmijUjemneLicznikImianownikA()
+        public void OdejmijUjemneLicznikA()
+        {
+            Ulamek a = new Ulamek(-1, 2);
+            Ulamek b = new Ulamek(1, 4);
+
+            Ulamek c = a - b;
+
+            Assert.AreEqual(-6, c.licznik);
+            Assert.AreEqual(8, c.mianownik);
+        }
+
+        //6
+        [Test]
+        public void OdejmijUjemneLicznikiMianownikA()
         {
             Ulamek a = new Ulamek(-1, -2);
             Ulamek b = new Ulamek(1, 4);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
-            Assert.AreEqual(6, c.licznik);
+            Assert.AreEqual(-6, c.licznik);
             Assert.AreEqual(8, c.mianownik);
         }
 
+        //7
         [Test]
         public void OdejmijUjemneLicznikImianownikB()
         {
             Ulamek a = new Ulamek(1, 2);
             Ulamek b = new Ulamek(-1, -4);
 
-            Ulamek c = a + b;
+            Ulamek c = a - b;
 
-            Assert.AreEqual(6, c.licznik);
+            Assert.AreEqual(2, c.licznik);
             Assert.AreEqual(8, c.mianownik);
         }
 

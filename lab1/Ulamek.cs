@@ -39,6 +39,25 @@ namespace lab1
 
         public static Ulamek operator -(Ulamek a, Ulamek b)
         {
+            if (a.licznik == 0)
+            {
+                return new Ulamek(-b.licznik, -b.mianownik);
+            }
+
+            if (b.licznik == 0)
+            {
+                return new Ulamek(a.licznik, a.mianownik);
+            }
+
+            if (a.licznik < 0)
+            {
+                return new Ulamek(((-b.mianownik * a.licznik) + (a.mianownik * b.licznik)) * -1, a.mianownik * b.mianownik);
+            }
+            if (a.licznik < 0 && a.mianownik < 0 || b.licznik < 0 && b.mianownik < 0)
+            {
+                return new Ulamek(((b.mianownik * a.licznik) - (a.mianownik * b.licznik)) * -1, (a.mianownik * b.mianownik) * -1);
+            }
+
             if (a.licznik == a.mianownik && b.licznik == b.mianownik)
             {
                 return new Ulamek(a.licznik - b.licznik, a.mianownik - b.mianownik);
