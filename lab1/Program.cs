@@ -1,65 +1,30 @@
 ﻿using System;
+using System.Linq;
 
 namespace lab1
 {
-    class Program
+    internal class Program
     {
-        public interface IEquatable 
-        { 
-        
-        }
-        public interface IComparable
+        public static void Main(string[] args)
         {
+            Ulamek a = new Ulamek(1, 2);
+            Ulamek b = new Ulamek(1, 6);
+            Ulamek x = new Ulamek(1, 4);
 
+            Ulamek d = a + b;
+            Ulamek e = a - b;
+            Ulamek f = a * b;
+            Ulamek g = a / b;
+
+            Console.WriteLine("+" + d.ToString());
+            Console.WriteLine("-" + e.ToString());
+            Console.WriteLine("*" + f.ToString());
+            Console.WriteLine("/" + g.ToString());
+
+            Ulamek[] tabU = new Ulamek[] { a, b, x };
+            Array.Sort(tabU);
+            a.toDouble();
+            a.toDecimal();
         }
-        public static void Main(string [] args)
-        {
-            Ulamek a = new Ulamek();
-            Ulamek b = new Ulamek(1,2);
-            Ulamek c = new Ulamek(b);
-            
- 
-            Console.WriteLine(b);
-            Console.WriteLine(b.ToString());
-        
-        }
-    }
-      
-        public class Ulamek
-    {
-            private int licznik;
-            private int mianownik;
-
-
-            public Ulamek()
-            {
-            this.licznik = 1;
-            this.mianownik = 1;
-
-            }
-             public Ulamek (int mianownik, int licznik)
-            {
-                this.licznik = licznik;
-                this.mianownik = mianownik;
-            }
-            public Ulamek(Ulamek kopia )
-            {
-            //int a =licznik;
-            //int b = mianownik;
-
-            this.licznik = kopia.licznik;
-            this.mianownik = kopia.mianownik;
-                       
-            }
-
-
-           
-        public override string ToString() => $"Licznik{licznik}, Mianownik{mianownik}"; 
-            
-
-
-        
-
     }
 }
-
