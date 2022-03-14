@@ -20,6 +20,20 @@ namespace lab1
 
         public static Ulamek operator +(Ulamek a, Ulamek b)
         {
+            if (a.licznik == 0)
+            {
+                return new Ulamek(b.licznik, b.mianownik);
+            }
+
+            if (b.licznik == 0)
+            {
+                return new Ulamek(a.licznik, a.mianownik);
+            }
+            if (a.licznik < 0 && a.mianownik < 0 || b.licznik < 0 && b.mianownik < 0)
+            {
+                return new Ulamek(((b.mianownik * a.licznik) + (a.mianownik * b.licznik)) * -1, ((a.mianownik * b.mianownik) * -1));
+            }
+
             return new Ulamek((b.mianownik * a.licznik) + (a.mianownik * b.licznik), a.mianownik * b.mianownik);
         }
 
@@ -60,6 +74,11 @@ namespace lab1
 
         public Ulamek(int licznik, int mianownik)
         {
+            if (mianownik == 0)
+            {
+                throw new ArgumentException("Mianownik nie może  być zerem");
+            }
+
             this.licznik = licznik;
             this.mianownik = mianownik;
         }

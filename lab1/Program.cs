@@ -7,7 +7,7 @@ namespace lab1
     {
         public static void Main(string[] args)
         {
-            Ulamek a = new Ulamek(1, 2);
+            /*Ulamek a = new Ulamek(1, 2);
             Ulamek b = new Ulamek(1, 6);
             Ulamek x = new Ulamek(1, 4);
 
@@ -24,7 +24,7 @@ namespace lab1
             Ulamek[] tabU = new Ulamek[] { a, b, x };
             Array.Sort(tabU);
             a.toDouble();
-            a.toDecimal();
+            a.toDecimal();*/
         }
     }
 }

@@ -2,7 +2,7 @@
 
 public class Test
 {
-	public Class1()
-	{
-	}
+    public Test()
+    {
+    }
 }
