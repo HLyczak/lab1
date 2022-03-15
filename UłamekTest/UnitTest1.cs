@@ -168,19 +168,6 @@ namespace UlamekTest
 
         //6
         [Test]
-        public void OdejmijUjemneLicznikiMianownikA()
-        {
-            Ulamek a = new Ulamek(-1, -2);
-            Ulamek b = new Ulamek(1, 4);
-
-            Ulamek c = a - b;
-
-            Assert.AreEqual(-6, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
-        }
-
-        //7
-        [Test]
         public void OdejmijUjemneLicznikImianownikB()
         {
             Ulamek a = new Ulamek(1, 2);
@@ -193,13 +180,75 @@ namespace UlamekTest
         }
 
         [Test]
-        public void Podziel()
+        public void PomnozDodatnie()
         {
+            Ulamek a = new Ulamek(1, 2);
+            Ulamek b = new Ulamek(1, 4);
+
+            Ulamek c = a * b;
+
+            Assert.AreEqual(1, c.licznik);
+            Assert.AreEqual(8, c.mianownik);
         }
 
         [Test]
-        public void Pomnoz()
+        public void PomnozUjemne()
         {
+            Ulamek a = new Ulamek(-1, -2);
+            Ulamek b = new Ulamek(-1, -4);
+
+            Ulamek c = a * b;
+
+            Assert.AreEqual(1, c.licznik);
+            Assert.AreEqual(8, c.mianownik);
+        }
+
+        [Test]
+        public void PomnozZzerem()
+        {
+            Ulamek a = new Ulamek(1, -2);
+            Ulamek b = new Ulamek(0, -4);
+
+            Ulamek c = a * b;
+
+            Assert.AreEqual(0, c.licznik);
+            Assert.AreEqual(8, c.mianownik);
+        }
+
+        [Test]
+        public void PodzielDodatnie()
+        {
+            Ulamek a = new Ulamek(1, 2);
+            Ulamek b = new Ulamek(1, 4);
+
+            Ulamek c = a / b;
+
+            Assert.AreEqual(4, c.licznik);
+            Assert.AreEqual(2, c.mianownik);
+        }
+
+        [Test]
+        public void PodzielUjemne()
+        {
+            Ulamek a = new Ulamek(-1, -2);
+            Ulamek b = new Ulamek(-1, -4);
+
+            Ulamek c = a / b;
+
+            Assert.AreEqual(4, c.licznik);
+            Assert.AreEqual(2, c.mianownik);
+        }
+
+        [Test]
+        public void PodzielzZerem()
+        {
+            Ulamek a = new Ulamek(0, 2);
+            Ulamek b = new Ulamek(1, 4);
+
+            Ulamek c = a / b;
+
+            Assert.AreEqual(0, c.licznik);
+            Assert.AreEqual(2, c.mianownik);
         }
     }
 }

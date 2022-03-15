@@ -53,7 +53,13 @@ namespace lab1
             {
                 return new Ulamek(((-b.mianownik * a.licznik) + (a.mianownik * b.licznik)) * -1, a.mianownik * b.mianownik);
             }
-            if (a.licznik < 0 && a.mianownik < 0 || b.licznik < 0 && b.mianownik < 0)
+
+            if (a.licznik < 0 && a.mianownik < 0)
+            {
+                return new Ulamek(((b.mianownik * a.licznik) + (a.mianownik * b.licznik)), (a.mianownik * b.mianownik));
+            }
+
+            if (b.licznik < 0 && b.mianownik < 0)
             {
                 return new Ulamek(((b.mianownik * a.licznik) - (a.mianownik * b.licznik)) * -1, (a.mianownik * b.mianownik) * -1);
             }
@@ -68,20 +74,11 @@ namespace lab1
 
         public static Ulamek operator *(Ulamek a, Ulamek b)
         {
-            if (a.licznik == 0 || b.licznik == 0)
-            {
-                return new Ulamek(0, 0);
-            }
-
             return new Ulamek(a.licznik * b.licznik, a.mianownik * b.mianownik);
         }
 
         public static Ulamek operator /(Ulamek a, Ulamek b)
         {
-            if (a.licznik == 0 || b.licznik == 0)
-            {
-                return new Ulamek(0, 0);
-            }
             return new Ulamek(a.licznik * b.mianownik, a.mianownik * b.licznik);
         }
 
