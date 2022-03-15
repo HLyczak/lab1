@@ -3,89 +3,95 @@ using System.Linq;
 
 namespace lab1
 {
+    ///<summary> Class <c>Ulamek</c> operates on fractions</summary>
     public class Ulamek : IComparable<Ulamek>, IEquatable<Ulamek>
     {
-        public int licznik { get; private set; }
-        public int mianownik { get; private set; }
+        public int Licznik { get; private set; }
+        public int Mianownik { get; private set; }
 
-        public double toDouble()
+        public double ToDouble()
         {
-            return ((double)this.licznik / (double)this.mianownik);
+            return ((double)this.Licznik / (double)this.Mianownik);
         }
 
-        public decimal toDecimal()
+        public decimal ToDecimal()
         {
-            return Math.Ceiling((decimal)this.licznik / (decimal)this.mianownik);
+            return Math.Ceiling((decimal)this.Licznik / (decimal)this.Mianownik);
         }
 
+        ///<summary> Method <c> operator +</c> adding fractions</summary>
         public static Ulamek operator +(Ulamek a, Ulamek b)
         {
-            if (a.licznik == 0)
+            if (a.Licznik == 0)
             {
-                return new Ulamek(b.licznik, b.mianownik);
+                return new Ulamek(b.Licznik, b.Mianownik);
             }
 
-            if (b.licznik == 0)
+            if (b.Licznik == 0)
             {
-                return new Ulamek(a.licznik, a.mianownik);
+                return new Ulamek(a.Licznik, a.Mianownik);
             }
-            if (a.licznik < 0 && a.mianownik < 0 || b.licznik < 0 && b.mianownik < 0)
+            if (a.Licznik < 0 && a.Mianownik < 0 || b.Licznik < 0 && b.Mianownik < 0)
             {
-                return new Ulamek(((b.mianownik * a.licznik) + (a.mianownik * b.licznik)) * -1, ((a.mianownik * b.mianownik) * -1));
+                return new Ulamek(((b.Mianownik * a.Licznik) + (a.Mianownik * b.Licznik)) * -1, ((a.Mianownik * b.Mianownik) * -1));
             }
 
-            return new Ulamek((b.mianownik * a.licznik) + (a.mianownik * b.licznik), a.mianownik * b.mianownik);
+            return new Ulamek((b.Mianownik * a.Licznik) + (a.Mianownik * b.Licznik), a.Mianownik * b.Mianownik);
         }
 
+        ///<summary> Method <c> operator - </c> subtraction of fractions </summary>
         public static Ulamek operator -(Ulamek a, Ulamek b)
         {
-            if (a.licznik == 0)
+            if (a.Licznik == 0)
             {
-                return new Ulamek(-b.licznik, -b.mianownik);
+                return new Ulamek(-b.Licznik, -b.Mianownik);
             }
 
-            if (b.licznik == 0)
+            if (b.Licznik == 0)
             {
-                return new Ulamek(a.licznik, a.mianownik);
+                return new Ulamek(a.Licznik, a.Mianownik);
             }
 
-            if (a.licznik < 0)
+            if (a.Licznik < 0)
             {
-                return new Ulamek(((-b.mianownik * a.licznik) + (a.mianownik * b.licznik)) * -1, a.mianownik * b.mianownik);
+                return new Ulamek(((-b.Mianownik * a.Licznik) + (a.Mianownik * b.Licznik)) * -1, a.Mianownik * b.Mianownik);
             }
 
-            if (a.licznik < 0 && a.mianownik < 0)
+            if (a.Licznik < 0 && a.Mianownik < 0)
             {
-                return new Ulamek(((b.mianownik * a.licznik) + (a.mianownik * b.licznik)), (a.mianownik * b.mianownik));
+                return new Ulamek(((b.Mianownik * a.Licznik) + (a.Mianownik * b.Licznik)), (a.Mianownik * b.Mianownik));
             }
 
-            if (b.licznik < 0 && b.mianownik < 0)
+            if (b.Licznik < 0 && b.Mianownik < 0)
             {
-                return new Ulamek(((b.mianownik * a.licznik) - (a.mianownik * b.licznik)) * -1, (a.mianownik * b.mianownik) * -1);
+                return new Ulamek(((b.Mianownik * a.Licznik) - (a.Mianownik * b.Licznik)) * -1, (a.Mianownik * b.Mianownik) * -1);
             }
 
-            if (a.licznik == a.mianownik && b.licznik == b.mianownik)
+            if (a.Licznik == a.Mianownik && b.Licznik == b.Mianownik)
             {
-                return new Ulamek(a.licznik - b.licznik, a.mianownik - b.mianownik);
+                return new Ulamek(a.Licznik - b.Licznik, a.Mianownik - b.Mianownik);
             }
             else
-                return new Ulamek((b.mianownik * a.licznik) - (a.mianownik * b.licznik), a.mianownik * b.mianownik);
+                return new Ulamek((b.Mianownik * a.Licznik) - (a.Mianownik * b.Licznik), a.Mianownik * b.Mianownik);
         }
+
+        ///<summary> Method <c> operator * </c> subtraction of fractions </summary>
 
         public static Ulamek operator *(Ulamek a, Ulamek b)
         {
-            return new Ulamek(a.licznik * b.licznik, a.mianownik * b.mianownik);
+            return new Ulamek(a.Licznik * b.Licznik, a.Mianownik * b.Mianownik);
         }
 
+        ///<summary> Method <c> operator / </c> multiplication of fractions </summary>
         public static Ulamek operator /(Ulamek a, Ulamek b)
         {
-            return new Ulamek(a.licznik * b.mianownik, a.mianownik * b.licznik);
+            return new Ulamek(a.Licznik * b.Mianownik, a.Mianownik * b.Licznik);
         }
 
         public Ulamek()
         {
-            this.licznik = 1;
-            this.mianownik = 1;
+            this.Licznik = 1;
+            this.Mianownik = 1;
         }
 
         public Ulamek(int licznik, int mianownik)
@@ -95,17 +101,17 @@ namespace lab1
                 throw new ArgumentException("Mianownik nie może  być zerem");
             }
 
-            this.licznik = licznik;
-            this.mianownik = mianownik;
+            this.Licznik = licznik;
+            this.Mianownik = mianownik;
         }
 
         public Ulamek(Ulamek kopia)
         {
-            this.licznik = kopia.licznik;
-            this.mianownik = kopia.mianownik;
+            this.Licznik = kopia.Licznik;
+            this.Mianownik = kopia.Mianownik;
         }
 
-        public override string ToString() => $"Licznik{licznik}, Mianownik{mianownik}";
+        public override string ToString() => $"Licznik{Licznik}, Mianownik{Mianownik}";
 
         public int CompareTo(Ulamek ulamek)
         {
@@ -113,7 +119,7 @@ namespace lab1
             {
                 return 0;
             }
-            if ((double)this.licznik / this.mianownik < (double)ulamek.licznik / ulamek.mianownik)
+            if ((double)this.Licznik / this.Mianownik < (double)ulamek.Licznik / ulamek.Mianownik)
             {
                 return 1;
             }
@@ -123,7 +129,7 @@ namespace lab1
 
         public bool Equals(Ulamek other)
         {
-            return ((double)this.licznik / this.mianownik == (double)other.licznik / other.mianownik);
+            return ((double)this.Licznik / this.Mianownik == (double)other.Licznik / other.Mianownik);
         }
     }
 }

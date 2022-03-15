@@ -15,16 +15,16 @@ namespace UlamekTest
         public void utworzenieUlamkaLicznikzerowy()
         {
             Ulamek a = new Ulamek(0, 20);
-            Assert.AreEqual(0, a.licznik);
-            Assert.AreEqual(20, a.mianownik);
+            Assert.AreEqual(0, a.Licznik);
+            Assert.AreEqual(20, a.Mianownik);
         }
 
         [Test]
         public void utworzenieUlamkaLicznikNieZerowy()
         {
             Ulamek b = new Ulamek(1, 20);
-            Assert.AreEqual(1, b.licznik);
-            Assert.AreEqual(20, b.mianownik);
+            Assert.AreEqual(1, b.Licznik);
+            Assert.AreEqual(20, b.Mianownik);
         }
 
         [Test]
@@ -35,8 +35,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(40, c.licznik);
-            Assert.AreEqual(400, c.mianownik);
+            Assert.AreEqual(40, c.Licznik);
+            Assert.AreEqual(400, c.Mianownik);
         }
 
         [Test]
@@ -47,8 +47,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(12, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(12, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -59,8 +59,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(4, c.licznik);
-            Assert.AreEqual(4, c.mianownik);
+            Assert.AreEqual(4, c.Licznik);
+            Assert.AreEqual(4, c.Mianownik);
         }
 
         [Test]
@@ -71,8 +71,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(1, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(1, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
 
         [Test]
@@ -83,8 +83,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(6, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(6, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -95,8 +95,8 @@ namespace UlamekTest
 
             Ulamek c = a + b;
 
-            Assert.AreEqual(6, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(6, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         //1
@@ -108,8 +108,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(0, c.licznik);
-            Assert.AreEqual(400, c.mianownik);
+            Assert.AreEqual(0, c.Licznik);
+            Assert.AreEqual(400, c.Mianownik);
         }
 
         //2
@@ -121,8 +121,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(-12, c.licznik);
-            Assert.AreEqual(16, c.mianownik);
+            Assert.AreEqual(-12, c.Licznik);
+            Assert.AreEqual(16, c.Mianownik);
         }
 
         //3
@@ -135,8 +135,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(1, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(1, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
 
         //4
@@ -148,8 +148,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(1, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(1, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
 
         //5
@@ -162,8 +162,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(-6, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(-6, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         //6
@@ -175,8 +175,8 @@ namespace UlamekTest
 
             Ulamek c = a - b;
 
-            Assert.AreEqual(2, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(2, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -187,8 +187,8 @@ namespace UlamekTest
 
             Ulamek c = a * b;
 
-            Assert.AreEqual(1, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(1, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -199,8 +199,8 @@ namespace UlamekTest
 
             Ulamek c = a * b;
 
-            Assert.AreEqual(1, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(1, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -211,8 +211,8 @@ namespace UlamekTest
 
             Ulamek c = a * b;
 
-            Assert.AreEqual(0, c.licznik);
-            Assert.AreEqual(8, c.mianownik);
+            Assert.AreEqual(0, c.Licznik);
+            Assert.AreEqual(8, c.Mianownik);
         }
 
         [Test]
@@ -223,8 +223,8 @@ namespace UlamekTest
 
             Ulamek c = a / b;
 
-            Assert.AreEqual(4, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(4, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
 
         [Test]
@@ -235,8 +235,8 @@ namespace UlamekTest
 
             Ulamek c = a / b;
 
-            Assert.AreEqual(4, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(4, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
 
         [Test]
@@ -247,8 +247,8 @@ namespace UlamekTest
 
             Ulamek c = a / b;
 
-            Assert.AreEqual(0, c.licznik);
-            Assert.AreEqual(2, c.mianownik);
+            Assert.AreEqual(0, c.Licznik);
+            Assert.AreEqual(2, c.Mianownik);
         }
     }
 }
